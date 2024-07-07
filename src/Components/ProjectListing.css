@@ -1,0 +1,145 @@
+   .project-listing-container {
+    padding: 30px;
+    background-color: #e0f7fa; /* Light blue background color */
+  }
+  
+  .project-header {
+    text-align: left;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-top: -34px;
+    margin-left: -173px;
+  }
+  .project-name h3{
+    text-align: left;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+  .top-img-project {
+    position: absolute;
+  margin-top: 0px;
+  width: 93%;
+ height: 130px;
+  overflow: hidden;
+  z-index: -1;
+  border-end-start-radius: 20px;
+  }
+  
+  .top-project {
+    width: 100%;
+    height: auto;
+  }
+  
+  .project-listing-content {
+    margin-top: 20px;
+    margin-left: -150px;
+  }
+  
+  .project-listing-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: -20px;
+  }
+  
+  .project-listing-content th,
+  .project-listing-content td {
+    border: 1.5px solid #f7f7f7;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .project-listing-content th {
+    background-color: #f2f2f2;
+  }
+  
+  .project-card {
+    background-color: rgb(255, 255, 255);
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Added box shadow for consistency */
+    transition: transform 0.3s ease; /* Added hover effect transition */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px); /* Hover effect to lift the card */
+  }
+  
+  .project-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project-dates {
+    color: #666;
+    font-size: 0.85rem;
+  }
+  
+  .project-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .action-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff; /* Blue color for buttons */
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .action-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .action-btn.start-btn {
+    background-color: #6664e3; /* Green for Start button */
+    border-radius: 20px;
+  }
+  
+  .action-btn.start-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .action-btn.close-btn {
+    background-color:  #6664e3; /* Red for Close button */
+    border-radius: 20px;
+  }
+  
+  .action-btn.close-btn:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
+  .action-btn.cancel-btn {
+    background-color:  #6664e3; /* Yellow for Cancel button */
+    border-radius: 20px;
+  }
+  
+  .action-btn.cancel-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px;
+    font-size: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 20px;
+  }
+  
+  .sort-dropdown {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  

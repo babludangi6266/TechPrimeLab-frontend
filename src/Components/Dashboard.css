@@ -1,0 +1,87 @@
+   .dashboard-container {
+    margin: 0;
+    margin-left: -150px;
+  }
+  
+  .dashboard-header {
+    position: relative;
+    text-align: left;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-top: -30px;
+  }
+  
+  .top-img-d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    z-index: -1;
+    border-end-start-radius: 20px;
+  }
+  
+  .top-d {
+    width: 100%;
+    height: auto;
+  }
+  
+  .dashboard-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -40px;
+    width: 100%;
+    padding: 0 20px; /* Added padding to match the spacing */
+  }
+  
+  .dashboard-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 30px;
+    height: 90px;
+    padding: 0px 25px; /* Added padding to increase the card size */
+    margin: 0 5px;
+    flex: 1;
+    box-shadow: 0px 14px 5px  rgba(61, 18, 147, 0.1); /* Added box shadow */
+    transition: transform 0.3s ease; /* Added hover effect transition */
+  }
+  
+  .dashboard-card h6 {
+    color: #561616;
+    margin-bottom: -45px;
+    font-size: 14px;
+  }
+  
+  .dashboard-card h5 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px); /* Hover effect to lift the card */
+  }
+  
+  .dashboard-chart {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .dashboard-chart h6 {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  

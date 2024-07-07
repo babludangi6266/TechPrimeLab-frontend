@@ -1,0 +1,76 @@
+/* .sidebar {
+    width: 70px;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .sidebar-link {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #ddd;
+    color: #000;
+  }
+   */
+
+   .sidebar {
+    width: 80px;
+    height: 100vh;
+    background-color: #ffffff;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Added black box shadow */
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .sidebar-link {
+    display: block;
+    width: 100%;
+    padding: 10px; /* Adjusted padding for smaller width */
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px; /* Adjusted font size for smaller width */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .sidebar-link img {
+    max-width: 20px; /* Adjusted max width for images */
+  }
+  
+  .sidebar-link:hover {
+    background-color: #ddd;
+    color: #000;
+  }
+  

@@ -1,0 +1,137 @@
+.create-project-header {
+
+  text-align: left;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-top: -34px;
+  margin-left: -173px;
+ 
+}
+
+.top-img-create {
+  position: absolute;
+  margin-top: 0px;
+  width: 93%;
+ height: 130px;
+  overflow: hidden;
+  z-index: -1;
+  border-end-start-radius: 20px;
+}
+
+.top-create {
+  width: 100%;
+  height: auto;
+}
+
+.create-project-name {
+ 
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 0px; 
+  margin-bottom: 80px;
+  text-align: left;
+  padding-left: 20px;
+}
+.create-project-name h3{
+    text-align: left;
+    margin-top: 40px;
+
+}
+.login-logo-create{
+  justify-content: right;
+  margin-left: 600px;
+  margin-top:-90px;
+  width: auto;
+  height: 70px;
+}
+
+.create-project-content-div{
+  border-radius: 10px;
+  border: 2px solid pink;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 0px auto;
+  width: 100%;
+  margin-top: -90px;
+  margin-left: -70px;
+}
+
+  .form-create-project-theme {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .form-group-theme input {
+    width: 50%;
+    height: 70px;
+    padding: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+  }
+  
+  .form-group {
+    margin: 20px;
+    width: 25%;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    color: #6a6262;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select,
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4b4fd9;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    margin-right: 20px;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  p {
+    color: #333;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .form-group-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .status-div {
+    margin-top: 20px;
+    font-size: 12px;
+    margin-left: 740px;
+    color: #6a6262;
+  }
