@@ -1,38 +1,3 @@
-/* .sidebar {
-    width: 70px;
-    height: 100vh;
-    background-color: #ffffff;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .sidebar-link {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .sidebar-link:hover {
-    background-color: #ddd;
-    color: #000;
-  }
-   */
 
    .sidebar {
     width: 80px;
