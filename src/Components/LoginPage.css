@@ -21,9 +21,12 @@
 .background-img-1 {
    
     width: 100%;
-    height: 70%;
+    height: 50%;
     object-fit: cover;
     border-bottom-left-radius: 50px;
+}
+.logo-img-1  p{
+    color: aliceblue;
 }
 
 .login-box-1 {
@@ -93,4 +96,38 @@ h2 {
 
 .login-button:hover {
     background: #005bb5;
+}
+@media (max-width: 768px) {
+    .login-box-1 {
+        width: 100%;
+        padding: 0px;
+        text-align: start;
+        margin-top: 150px;
+        margin-left: -35px;
+        box-shadow: none; /* Remove shadow */
+        border: none; /* Remove border */
+    }
+
+    .login-logo-1 {
+        width: 90px;
+        margin-top: 50px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .input-group input {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    .forgot-password {
+        font-size: 0.7em;
+    }
+
+    .login-button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
 }

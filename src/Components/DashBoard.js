@@ -5,7 +5,6 @@ import loginbg from '../assets/login-bg-1.svg';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const [projects, setProjects] = useState([]);
   const [totalProjects, setTotalProjects] = useState(0);
   const [closedProjects, setClosedProjects] = useState(0);
   const [runningProjects, setRunningProjects] = useState(0);
@@ -14,24 +13,20 @@ const Dashboard = () => {
   const [chartData, setChartData] = useState([]);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchCounters = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/projects/getall');
-        const projects = res.data;
-        setProjects(projects);
+        const countersRes = await axios.get('http://localhost:5000/api/projects/counters');
+        const closureDelayRes = await axios.get('http://localhost:5000/api/projects/closure-delay-counter');
 
-        // Compute counts
-        const total = projects.length;
-        const closed = projects.filter(p => p.status === 'Closed').length;
-        const running = projects.filter(p => p.status === 'Running').length;
-        const closureDelay = projects.filter(p => new Date(p.endDate) < new Date() && p.status !== 'Closed').length;
-        const cancelled = projects.filter(p => p.status === 'Cancelled').length;
+        setTotalProjects(countersRes.data.totalProjects);
+        setClosedProjects(countersRes.data.closedProjects);
+        setRunningProjects(countersRes.data.runningProjects);
+        setCancelledProjects(countersRes.data.cancelledProjects);
+        setClosureDelayProjects(closureDelayRes.data.closureDelayProjects);
 
-        setTotalProjects(total);
-        setClosedProjects(closed);
-        setRunningProjects(running);
-        setClosureDelayProjects(closureDelay);
-        setCancelledProjects(cancelled);
+        // Fetch projects for the chart data
+        const projectsRes = await axios.get('http://localhost:5000/api/projects/getall');
+        const projects = projectsRes.data;
 
         // Compute chart data
         const departments = [...new Set(projects.map(p => p.department))];
@@ -43,13 +38,12 @@ const Dashboard = () => {
         });
 
         setChartData(chartData);
-
       } catch (err) {
         console.error(err.message);
       }
     };
 
-    fetchProjects();
+    fetchCounters();
   }, []);
 
   return (

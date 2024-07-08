@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import loginbg from '../assets/login-bg-1.svg';
 import './CreateProject.css';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import logo from '../assets/Logo.svg';
 const CreateProject = () => {
   const [projectTheme, setProjectTheme] = useState('');
@@ -39,8 +41,10 @@ const CreateProject = () => {
         }
       });
       console.log('Project saved:', res.data);
+      toast.success('Project saved successfully!');
     } catch (err) {
       console.error(err);
+      toast.error('Failed to save project. Please try again.');
     }
   };
 
@@ -67,7 +71,7 @@ const CreateProject = () => {
             onChange={(e) => setProjectTheme(e.target.value)}
           />
         </div>
-        <button onClick={handleSaveProject}>Save Project</button>
+        <button onClick={handleSaveProject} className='create-button'>Save Project</button>
       </div>
       <div className="form-group-container">
         <div className="form-group">
@@ -183,6 +187,7 @@ const CreateProject = () => {
         <h3>Status:<b>{status}</b></h3>
       </div>
     </div>
+    <ToastContainer />
     </div>
   );
 };

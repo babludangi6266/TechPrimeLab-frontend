@@ -1,63 +1,65 @@
-.create-project-header {
-
-  text-align: left;
-  padding: 10px;
-  color: white;
-  border-radius: 10px;
-  margin-top: -34px;
-  margin-left: -173px;
- 
-}
-
-.top-img-create {
-  position: absolute;
-  margin-top: 0px;
-  width: 93%;
- height: 130px;
-  overflow: hidden;
-  z-index: -1;
-  border-end-start-radius: 20px;
-}
-
-.top-create {
-  width: 100%;
-  height: auto;
-}
-
-.create-project-name {
- 
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 0px; 
-  margin-bottom: 80px;
-  text-align: left;
-  padding-left: 20px;
-}
-.create-project-name h3{
+  .create-project-header {
+    text-align: left;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin-top: -34px;
+    margin-left: -173px;
+  }
+  
+  .top-img-create {
+    position: absolute;
+    margin-top: 0px;
+    width: 93%;
+    height: 130px;
+    overflow: hidden;
+    z-index: -1;
+    border-end-start-radius: 20px;
+  }
+  
+  .top-create {
+    width: 100%;
+    height: auto;
+  }
+  
+  .create-project-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0px; 
+    margin-bottom: 80px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .create-project-name h3 {
     text-align: left;
     margin-top: 40px;
-
-}
-.login-logo-create{
-  justify-content: right;
-  margin-left: 600px;
-  margin-top:-90px;
-  width: auto;
-  height: 70px;
-}
-
-.create-project-content-div{
-  border-radius: 10px;
-  border: 2px solid pink;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  margin: 0px auto;
-  width: 100%;
-  margin-top: -90px;
-  margin-left: -70px;
-}
-
+  }
+  
+  .login-logo-create {
+    justify-content: right;
+    margin-left: 600px;
+    margin-top: -90px;
+    width: auto;
+    height: 70px;
+  }
+  
+  .create-project-content-div {
+    border-radius: 10px;
+    border: 2px solid pink;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 0px auto;
+    width: 100%;
+    margin-top: -90px;
+    margin-left: -70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 140px);
+  }
+  
   .form-create-project-theme {
     display: flex;
     flex-direction: row;
@@ -74,7 +76,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-
   }
   
   .form-group {
@@ -110,7 +111,6 @@
     cursor: pointer;
     display: block;
     margin: 20px auto;
-    margin-right: 20px;
   }
   
   button:hover {
@@ -129,9 +129,95 @@
     justify-content: space-between;
     width: 100%;
   }
+  
   .status-div {
     margin-top: 20px;
     font-size: 12px;
     margin-left: 740px;
     color: #6a6262;
   }
+  
+  @media (max-width: 768px) {
+    .create-project-header {
+      text-align: left;
+    
+     width: 400px;
+      margin-left: -274px;
+      display: flex;
+      flex-direction: column;
+     
+    }
+  
+    .top-img-create {
+      width: 100%;
+      height: 100px;
+      
+    }
+  
+    .create-project-name {
+      font-size: 1rem;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .create-project-name h3 {
+  text-align: center;
+      margin-top: 25px;
+      margin-left: -191px;
+    }
+  
+    .login-logo-create {
+     display: none;
+    }
+  
+    .create-project-content-div {
+     
+      width: 250px;
+     
+      margin-top: 15px;
+      margin-left: -210px;
+      min-height: auto;
+    }
+  
+    .form-create-project-theme {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  
+    .form-group-theme input {
+      width: 90%;
+      height: 50px;
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .form-group {
+      width: 90%;
+      margin: 10px auto;
+    }
+  
+    .form-group-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .status-div {
+      font-size: 12px;
+      margin-left: 0;
+      text-align: center;
+      
+    }
+  
+    .create-button {
+      margin: 10px auto;
+      width: 140px;
+      position: absolute;
+      bottom: -450px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  

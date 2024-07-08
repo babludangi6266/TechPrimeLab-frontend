@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import Sidebar from './Components/SideBar';
 import Login from './Components/Login';
+import  Logout from './Components/Logout';
 import Dashboard from './Components/DashBoard';
 import CreateProject from './Components/CreateProject';
 import ProjectListing from './Components/ProjectListing';
@@ -17,6 +18,9 @@ function App() {
   const handleLogin = () => {
     setLoggedIn(true); 
   };
+  const handleLogout = () => {
+    setLoggedIn(false);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -29,7 +33,7 @@ function App() {
               <Route path="/dashboard" element={loggedIn ? <Dashboard /> : <Navigate to="/" />} />
               <Route path="/create-project" element={loggedIn ? <CreateProject /> : <Navigate to="/" />} />
               <Route path="/ProjectListing" element={loggedIn ? <ProjectListing /> : <Navigate to="/" />} />
-              
+              <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
             </Routes>
           </Box>
           {loggedIn && <Sidebar />} {/* Render Sidebar only if logged in */}

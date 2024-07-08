@@ -1,13 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Pagination } from '@mui/material'; // Import Pagination from Material-UI
 import loginbg from '../assets/login-bg-1.svg';
 import './ProjectListing.css';
 import logo from '../assets/Logo.svg';
+
 const ProjectListing = () => {
   const [projects, setProjects] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortKey, setSortKey] = useState('Priority');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 7; // Show 7 items per page
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -57,14 +60,24 @@ const ProjectListing = () => {
     return a[sortKey.toLowerCase()] > b[sortKey.toLowerCase()] ? 1 : -1;
   });
 
+  // Pagination logic
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = sortedProjects.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
+
   return (
     <>
       <div className="project-header">
         <div className="top-img-project">
           <img src={loginbg} className="top-project" alt="background" />
         </div>
-        <div className="project-name"><h3>Project Listing</h3>
-        <img src={logo} alt="Logo" className="login-logo-create" />
+        <div className="project-name">
+          <h3>Project Listing</h3>
+          <img src={logo} alt="Logo" className="login-logo-create" />
         </div>
       </div>
       <div className="project-listing-content">
@@ -77,7 +90,7 @@ const ProjectListing = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div>
-            Sort by: 
+            Sort by:
             <select
               className="sort-dropdown"
               value={sortKey}
@@ -104,7 +117,7 @@ const ProjectListing = () => {
             </tr>
           </thead>
           <tbody>
-            {sortedProjects.map((project) => (
+            {currentItems.map((project) => (
               <tr key={project._id} className="project-card">
                 <td>
                   <div className="project-info">
@@ -143,6 +156,12 @@ const ProjectListing = () => {
             ))}
           </tbody>
         </table>
+        <Pagination
+          count={Math.ceil(sortedProjects.length / itemsPerPage)}
+          page={currentPage}
+          onChange={handlePageChange}
+          color="primary"
+        />
       </div>
     </>
   );
