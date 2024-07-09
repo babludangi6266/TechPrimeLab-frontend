@@ -15,7 +15,7 @@ const ProjectListing = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/projects/getall');
+        const res = await axios.get('https://techprimebackend-j1hq.onrender.com/api/projects/getall');
         setProjects(res.data);
       } catch (err) {
         console.error(err.message);
@@ -29,7 +29,7 @@ const ProjectListing = () => {
     try {
       const token = localStorage.getItem('token');
       const res = await axios.put(
-        'http://localhost:5000/api/projects/updateStatus',
+        'https://techprimebackend-j1hq.onrender.com/api/projects/updateStatus',
         { projectId, status: newStatus },
         {
           headers: {

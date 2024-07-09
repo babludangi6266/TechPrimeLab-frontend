@@ -104,8 +104,8 @@ h2 {
         text-align: start;
         margin-top: 150px;
         margin-left: -35px;
-        box-shadow: none; /* Remove shadow */
-        border: none; /* Remove border */
+        box-shadow: none;
+        border: none; 
     }
 
     .login-logo-1 {

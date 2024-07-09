@@ -15,19 +15,18 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCounters = async () => {
       try {
-        const countersRes = await axios.get('http://localhost:5000/api/projects/counters');
-        const closureDelayRes = await axios.get('http://localhost:5000/api/projects/closure-delay-counter');
-
+        const countersRes = await axios.get('https://techprimebackend-j1hq.onrender.com/api/projects/counters');
+      
         setTotalProjects(countersRes.data.totalProjects);
         setClosedProjects(countersRes.data.closedProjects);
         setRunningProjects(countersRes.data.runningProjects);
         setCancelledProjects(countersRes.data.cancelledProjects);
-        setClosureDelayProjects(closureDelayRes.data.closureDelayProjects);
+        setClosureDelayProjects(0);
 
         // Fetch projects for the chart data
-        const projectsRes = await axios.get('http://localhost:5000/api/projects/getall');
+        const projectsRes = await axios.get('https://techprimebackend-j1hq.onrender.com/api/projects/getall');
         const projects = projectsRes.data;
-
+        console.log(projectsRes)
         // Compute chart data
         const departments = [...new Set(projects.map(p => p.department))];
         const chartData = departments.map(department => {

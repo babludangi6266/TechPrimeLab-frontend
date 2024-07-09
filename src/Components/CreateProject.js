@@ -35,7 +35,7 @@ const CreateProject = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/projects', projectData, {
+      const res = await axios.post('https://techprimebackend-j1hq.onrender.com/api/projects', projectData, {
         headers: {
           'x-auth-token': token
         }
