@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend, ResponsiveContainer  } from 'recharts';
 import loginbg from '../assets/login-bg-1.svg';
 import './Dashboard.css';
 
@@ -26,7 +26,7 @@ const Dashboard = () => {
         // Fetch projects for the chart data
         const projectsRes = await axios.get('https://techprimebackend-j1hq.onrender.com/api/projects/getall');
         const projects = projectsRes.data;
-        console.log(projectsRes)
+        
         // Compute chart data
         const departments = [...new Set(projects.map(p => p.department))];
         const chartData = departments.map(department => {
@@ -79,6 +79,7 @@ const Dashboard = () => {
 
       <div className="dashboard-chart">
         <h6>Department wise - Total Vs Closed</h6>
+        <ResponsiveContainer width="100%" height={300}>
         <BarChart width={600} height={300} data={chartData}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
@@ -88,6 +89,7 @@ const Dashboard = () => {
           <Bar dataKey="Total" fill="#8884d8" />
           <Bar dataKey="Closed" fill="#82ca9d" />
         </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

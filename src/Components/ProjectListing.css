@@ -1,6 +1,6 @@
    .project-listing-container {
     padding: 30px;
-    background-color: #e0f7fa; /* Light blue background color */
+    background-color: #e0f7fa; 
   }
   
   .project-header {
@@ -57,12 +57,12 @@
     background-color: rgb(255, 255, 255);
     margin: 20px 0;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Added box shadow for consistency */
-    transition: transform 0.3s ease; /* Added hover effect transition */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); 
+    transition: transform 0.3s ease;
   }
   
   .project-card:hover {
-    transform: translateY(-5px); /* Hover effect to lift the card */
+    transform: translateY(-5px); 
   }
   
   .project-info {
@@ -83,7 +83,7 @@
   .action-btn {
     padding: 8px 16px;
     border: none;
-    background-color: #007bff; /* Blue color for buttons */
+    background-color: #007bff; 
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -91,34 +91,34 @@
   }
   
   .action-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
   }
   
   .action-btn.start-btn {
-    background-color: #6664e3; /* Green for Start button */
+    background-color: #6664e3; 
     border-radius: 20px;
   }
   
   .action-btn.start-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838; 
   }
   
   .action-btn.close-btn {
-    background-color:  #6664e3; /* Red for Close button */
+    background-color:  #6664e3; 
     border-radius: 20px;
   }
   
   .action-btn.close-btn:hover {
-    background-color: #c82333; /* Darker red on hover */
+    background-color: #c82333; 
   }
   
   .action-btn.cancel-btn {
-    background-color:  #6664e3; /* Yellow for Cancel button */
+    background-color:  #6664e3; 
     border-radius: 20px;
   }
   
   .action-btn.cancel-btn:hover {
-    background-color: #e0a800; /* Darker yellow on hover */
+    background-color: #e0a800; 
   }
   
   .search-container {
@@ -142,183 +142,123 @@
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  /* Existing CSS code remains unchanged above */
+  @media (max-width: 768px) {
+    .project-header{
+      margin-left: -270px;
+      width: 100%;
+    }
+    .project-listing-content {
+      margin: 10;
+      margin-left: -155px;
+      width: 100%;
+    }
+    .search-container{
+      display: flex;
+  justify-content: space-between;
+    }
+    .project-name h3{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    .top-img-project{
+      width: 100%;
+    }
+    .top-img-project img {
+      width: 100%;
+    }
+    .project-header1{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: larger;
+      font-weight: 900;
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .project-listing-content {
-    margin-left: 0;
-    padding: 10px;
-  }
-
-  .project-listing-content table {
-    display: none;
-  }
-
-  .project-listing-content .project-card {
-    display: block;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px 0;
-    padding: 15px;
-    width: 100%;
-  }
-
-  .project-info {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project-dates {
-    color: #666;
-    font-size: 0.85rem;
-    margin-top: 5px;
-  }
-
-  .project-card {
-    background-color: #fff;
-    margin: 10px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .project-card .project-info {
-    margin-bottom: 10px;
-  }
-
-  .project-card .project-details {
-    margin: 10px 0;
-  }
-
-  .project-card .project-details p {
-    margin: 5px 0;
-  }
-
-  .project-card .project-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .project-card .action-btn {
-    margin-bottom: 5px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .search-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .search-input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .sort-dropdown {
-    width: 100%;
-  }
-  .project-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .project-card-header h3 {
-    margin: 0;
-  }
-
-  .project-card-header span {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-
-  .project-info {
-    margin-bottom: 10px;
-  }
-
-  .project-details {
-    margin: 10px 0;
-  }
-
-  .project-details p {
-    margin: 5px 0;
-  }
-
-  /* New Styles for Mobile Responsiveness */
-  .project-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    }
+    .project-header1 span{
+      font-weight: 800;
+    }
   
-  .project-name {
-    text-align: center;
-    margin-top: 20px;
+    .search-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .search-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .sort-dropdown {
+      width: 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .sort-label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  
+    .project-cards {
+      gap: 10px;
+    }
+  
+    .project-card {
+      padding: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: #fff;
+      width: 330px;
+      margin-left: -95px;
+    }
+  
+    .project-header {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .project-actions {
+      display: flex;
+      flex-direction: row;
+    }
+    .project-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .action-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .action-btn:hover {
+      background-color: #eee;
+    }
+    
+    .action-btn:active {
+      background-color: #ccc;
+      color: #fff;
+    }
+    
+    .start-btn:active {
+      background-color: #34c759; 
+    }
+    
+    .close-btn:active {
+      background-color: #ff9900; 
+    }
+    
+    .cancel-btn:active {
+      background-color: #ff3737; /* red */
+    }
+    .project-info strong{
+        color: #8d7c7c;
+    }
   }
-
-  .top-img-project {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-
-  .top-project {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .action-btn {
-    margin-bottom: 5px;
-    width: 100%;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 14px;
-    padding: 8px 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
-  }
-
-  .action-btn:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
-  }
-
-  /* Additional styles to match the example image */
-  .project-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .project-card-header h3 {
-    margin: 0;
-  }
-
-  .project-card-header span {
-    background-color: #007bff;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-
-  .project-info {
-    margin-bottom: 10px;
-  }
-
-  .project-details {
-    margin: 10px 0;
-  }
-
-  .project-details p {
-    margin: 5px 0;
-  }
-}

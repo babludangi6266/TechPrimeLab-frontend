@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Pagination } from '@mui/material'; // Import Pagination from Material-UI
+import { Pagination } from '@mui/material'; 
 import loginbg from '../assets/login-bg-1.svg';
 import './ProjectListing.css';
 import logo from '../assets/Logo.svg';
 
 const ProjectListing = () => {
   const [projects, setProjects] = useState([]);
+  const [screenwidth, setScreenwidth]=useState(window.innerWidth);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortKey, setSortKey] = useState('Priority');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7; // Show 7 items per page
+  const itemsPerPage = 7;
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -19,6 +20,16 @@ const ProjectListing = () => {
         setProjects(res.data);
       } catch (err) {
         console.error(err.message);
+      }
+
+      const handleResize=()=>{
+        setScreenwidth(window.innerWidth)
+      }
+
+      window.addEventListener('resize',handleResize);
+
+      return()=>{
+        window.removeEventListener('resize',handleResize)
       }
     };
 
@@ -59,8 +70,6 @@ const ProjectListing = () => {
     }
     return a[sortKey.toLowerCase()] > b[sortKey.toLowerCase()] ? 1 : -1;
   });
-
-  // Pagination logic
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = sortedProjects.slice(indexOfFirstItem, indexOfLastItem);
@@ -101,8 +110,8 @@ const ProjectListing = () => {
               <option value="Project Name">Project Name</option>
             </select>
           </div>
-        </div>
-        <table>
+       </div>
+       { screenwidth >900 && <table>
           <thead>
             <tr>
               <th>Project Name</th>
@@ -155,14 +164,54 @@ const ProjectListing = () => {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> 
+       ||  screenwidth < 900 && 
+       <div className="project-cards">
+       {currentItems.map((project) => (
+         <div key={project._id} className="project-card">
+           <div className="project-info">
+             <div className="project-header1">
+               <div>{project.projectTheme}</div>
+               <span className={`status ${project.status.toLowerCase()}`}>{project.status}</span>
+             </div>
+             <p>{formatDate(project.startDate)} to {formatDate(project.endDate)}</p>
+             <p><strong>Reason:</strong> {project.reason}</p>
+             <p><strong>Type:</strong> {project.type} • <strong>Category:</strong> {project.category}</p>
+             <p><strong>Div:</strong> {project.division} • <strong>Dept:</strong> {project.department}</p>
+             <p><strong>Location:</strong> {project.location}</p>
+             <p><strong>Priority:</strong> {project.priority}</p>
+             <div className="project-actions">
+               <button
+                 className="action-btn start-btn"
+                 onClick={() => updateStatus(project._id, 'Running')}
+               >
+                 Start
+               </button>
+               <button
+                 className="action-btn close-btn"
+                 onClick={() => updateStatus(project._id, 'Closed')}
+               >
+                 Close
+               </button>
+               <button
+                 className="action-btn cancel-btn"
+                 onClick={() => updateStatus(project._id, 'Cancelled')}
+               >
+                 Cancel
+               </button>
+             </div>
+           </div>
+         </div>
+       ))}
+     </div>
+    }
         <Pagination
           count={Math.ceil(sortedProjects.length / itemsPerPage)}
           page={currentPage}
           onChange={handlePageChange}
           color="primary"
         />
-      </div>
+        </div>
     </>
   );
 };

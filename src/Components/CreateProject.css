@@ -140,8 +140,7 @@
   @media (max-width: 768px) {
     .create-project-header {
       text-align: left;
-    
-     width: 400px;
+      width: 400px;
       margin-left: -274px;
       display: flex;
       flex-direction: column;
@@ -151,7 +150,6 @@
     .top-img-create {
       width: 100%;
       height: 100px;
-      
     }
   
     .create-project-name {
@@ -175,10 +173,9 @@
     .create-project-content-div {
      
       width: 250px;
-     
-      margin-top: 15px;
+      margin-top: 2px;
       margin-left: -210px;
-      min-height: auto;
+      height: 1100px;
     }
   
     .form-create-project-theme {
@@ -208,14 +205,18 @@
       font-size: 12px;
       margin-left: 0;
       text-align: center;
+      margin-bottom: 70px;
       
     }
-  
+    .status-div b{
+      color: #333;
+      font-size: 16px;
+    }
     .create-button {
       margin: 10px auto;
-      width: 140px;
+      width: 160px;
       position: absolute;
-      bottom: -450px;
+      bottom: -520px;
       left: 50%;
       transform: translateX(-50%);
     }
